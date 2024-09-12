@@ -19,8 +19,17 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain config(HttpSecurity http) throws Exception {
+
+        String[] publicResources={
+          "/css/**",
+          "/js/**",
+          "/images/**",
+          "/fonts/**"
+        };
+
         return http
-                .authorizeHttpRequests(auth -> auth.anyRequest().authenticated())
+                .authorizeHttpRequests(auth -> auth.requestMatchers(publicResources).permitAll())
+                .authorizeHttpRequests(auth -> auth.anyRequest().permitAll())
                 .authenticationProvider(authenticationProvider())
                 .formLogin(Customizer.withDefaults())
                 .build();
