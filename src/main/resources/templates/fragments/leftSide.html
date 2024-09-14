@@ -1,0 +1,89 @@
+<div class="col-md-3 bg-dark h-100 m-0 text-light" th:fragment="leftSide(active)">
+    <div class="p-4 mt-3">
+        <h4 class="text-info d-flex justify-content-start align-items-center"><img th:src="@{images/logo.svg}"
+                                                                                   width="35"
+                                                                                   height="35" alt="Logo" class="me-1"/>
+            MSM</h4>
+    </div>
+    <div class="mt-4 h-75 d-flex flex-column justify-content-center align-items-start">
+        <ul class="list-group w-100 list-group-flush">
+            <li th:class="'list-group-item text-light' + (${active} == 'home' ? ' list-group-item-action list-group-item-dark' : ' bg-dark')">
+                <a th:href="@{'/home'}"
+                   th:class="'d-flex justify-content-start align-items-center'+(${active} == 'home' ? ' text-dark' : ' text-light')">
+                    <img th:src="@{images/home.svg}" alt="book" width="35" height="35" class="me-1"/>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li th:class="'list-group-item text-light' + (${active} == 'shop' ? ' list-group-item-action list-group-item-dark' : ' bg-dark')">
+                <a th:href="@{'/shop'}"
+                   th:class="'d-flex justify-content-start align-items-center'+(${active} == 'shop' ? ' text-dark' : ' text-light')">
+                    <img th:src="@{images/fav.svg}" alt="book" width="35" height="35" class="me-1"/>
+                    <span>Shop</span>
+                </a>
+            </li>
+            <li th:class="'list-group-item text-light' + (${active} == 'user' ? ' list-group-item-action list-group-item-dark' : ' bg-dark')">
+                <a th:href="@{'/user'}"
+                   th:class="'d-flex justify-content-start align-items-center'+(${active} == 'user' ? ' text-dark' : ' text-light')">
+                    <img th:src="@{images/user.svg}" alt="book" width="35" height="35" class="me-1"/>
+                    <span>User</span>
+                </a>
+            </li>
+            <li th:class="'list-group-item text-light' + (${active} == 'role' ? ' list-group-item-action list-group-item-dark' : ' bg-dark')">
+                <a th:href="@{'/role'}"
+                   th:class="'d-flex justify-content-start align-items-center'+(${active} == 'role' ? ' text-dark' : ' text-light')">
+                    <img th:src="@{images/role.svg}" alt="book" width="35" height="35" class="me-1"/>
+                    <span>Role</span>
+                </a>
+            </li>
+            <li th:class="'list-group-item text-light' + (${active} == 'salary' ? ' list-group-item-action list-group-item-dark' : ' bg-dark')">
+                <a th:href="@{'/salary'}"
+                   th:class="'d-flex justify-content-start align-items-center'+(${active} == 'salary' ? ' text-dark' : ' text-light')">
+                    <img th:src="@{images/salary.svg}" alt="book" width="35" height="35" class="me-1"/>
+                    <span>Salary</span>
+                </a>
+            </li>
+            <li th:class="'list-group-item text-light' + (${active} == 'model_category' ? ' list-group-item-action list-group-item-dark' : ' bg-dark')">
+                <a th:href="@{'/model_category'}"
+                   th:class="'d-flex justify-content-start align-items-center'+(${active} == 'model_category' ? ' text-dark' : ' text-light')">
+                    <img th:src="@{images/model_category.svg}" alt="book" width="35" height="35" class="me-1"/>
+                    <span>Model Category</span>
+                </a>
+            </li>
+            <li th:class="'list-group-item text-light' + (${active} == 'product_model' ? ' list-group-item-action list-group-item-dark' : ' bg-dark')">
+                <a th:href="@{'/product_model'}"
+                   th:class="'d-flex justify-content-start align-items-center'+(${active} == 'product_model' ? ' text-dark' : ' text-light')">
+                    <img th:src="@{images/product_model.svg}" alt="book" width="35" height="35" class="me-1"/>
+                    <span>Product Model</span>
+                </a>
+            </li>
+            <li th:class="'list-group-item text-light' + (${active} == 'trade' ? ' list-group-item-action list-group-item-dark' : ' bg-dark')">
+                <a th:href="@{'/trade'}"
+                   th:class="'d-flex justify-content-start align-items-center'+(${active} == 'trade' ? ' text-dark' : ' text-light')">
+                    <img th:src="@{images/trade.svg}" alt="book" width="35" height="35" class="me-1"/>
+                    <span>Trade</span>
+                </a>
+            </li>
+            <li th:class="'list-group-item text-light' + (${active} == 'cost_type' ? ' list-group-item-action list-group-item-dark' : ' bg-dark')">
+                <a th:href="@{'/cost_type'}"
+                   th:class="'d-flex justify-content-start align-items-center'+(${active} == 'cost_type' ? ' text-dark' : ' text-light')">
+                    <img th:src="@{images/cost_type.svg}" alt="book" width="35" height="35" class="me-1"/>
+                    <span>Cost Type</span>
+                </a>
+            </li>
+            <li th:class="'list-group-item text-light' + (${active} == 'cost' ? ' list-group-item-action list-group-item-dark' : ' bg-dark')">
+                <a th:href="@{'/cost'}"
+                   th:class="'d-flex justify-content-start align-items-center'+(${active} == 'cost' ? ' text-dark' : ' text-light')">
+                    <img th:src="@{images/cost.svg}" alt="book" width="35" height="35" class="me-1"/>
+                    <span>Cost</span>
+                </a>
+            </li>
+            <li th:class="'list-group-item text-light' + (${active} == 'mail' ? ' list-group-item-action list-group-item-dark' : ' bg-dark')">
+                <a th:href="@{'/mail'}"
+                   th:class="'d-flex justify-content-start align-items-center'+(${active} == 'mail' ? ' text-dark' : ' text-light')">
+                    <img th:src="@{images/mail.svg}" alt="book" width="35" height="35" class="me-1"/>
+                    <span>Mail</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

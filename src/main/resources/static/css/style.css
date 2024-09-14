@@ -7,4 +7,17 @@
 
 body {
     font-family: Overlock, sans-serif, Arial !important;
+    background: #cbc9c9;
+}
+
+.main-content {
+    height: 100vh;
+}
+
+a {
+    text-decoration: none;
+}
+
+#error_page {
+    background: white !important;
 }

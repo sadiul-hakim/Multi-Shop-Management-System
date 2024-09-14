@@ -5,7 +5,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
-import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -20,18 +19,27 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain config(HttpSecurity http) throws Exception {
 
-        String[] publicResources={
-          "/css/**",
-          "/js/**",
-          "/images/**",
-          "/fonts/**"
+        String[] publicResources = {
+                "/css/**",
+                "/js/**",
+                "/images/**",
+                "/fonts/**",
+                "/loginPage",
+                "/login",
+                "/logout"
         };
 
         return http
                 .authorizeHttpRequests(auth -> auth.requestMatchers(publicResources).permitAll())
-                .authorizeHttpRequests(auth -> auth.anyRequest().permitAll())
+                .authorizeHttpRequests(auth -> auth.anyRequest().authenticated())
                 .authenticationProvider(authenticationProvider())
-                .formLogin(Customizer.withDefaults())
+                .formLogin(form -> form.loginProcessingUrl("/login")
+                        .loginPage("/loginPage")
+                        .defaultSuccessUrl("/", true)
+                        .failureUrl("/login?error=true")
+                )
+                .logout(logout -> logout.logoutUrl("/logout")
+                        .logoutSuccessUrl("/loginPage?logout=true"))
                 .build();
     }
 

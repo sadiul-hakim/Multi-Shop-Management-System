@@ -19,6 +19,5 @@ public class Product {
     @ManyToOne
     private ProductModel model;
     private int numberOfProduct;
-    private double pricePerPiece;
     private double discountPercentage;
 }

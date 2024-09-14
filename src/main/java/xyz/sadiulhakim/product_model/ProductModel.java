@@ -26,4 +26,5 @@ public class ProductModel {
 
     @ManyToOne
     private ModelCategory category;
+    private double pricePerPiece;
 }

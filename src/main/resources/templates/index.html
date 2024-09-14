@@ -1,8 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
 <head th:replace="~{fragments/head :: head}">
 </head>
 <body>
-    <h1 class="p-3 bg-danger text-light text-center">Multiple Shop Manager</h1>
+<div class="container-fluid">
+    <div class="row main-content">
+        <div th:replace="~{fragments/leftSide :: leftSide('home')}"></div>
+        <div th:replace="~{fragments/rightSide :: rightSide(~{::#content})}">
+            <div id="content">
+                <h1>Hi this is Home Page</h1>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
