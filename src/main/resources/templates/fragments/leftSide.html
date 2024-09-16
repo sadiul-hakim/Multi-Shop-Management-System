@@ -8,7 +8,7 @@
     <div class="mt-4 h-75 d-flex flex-column justify-content-center align-items-start">
         <ul class="list-group w-100 list-group-flush">
             <li th:class="'list-group-item text-light' + (${active} == 'home' ? ' list-group-item-action list-group-item-dark' : ' bg-dark')">
-                <a th:href="@{'/home'}"
+                <a th:href="@{'/'}"
                    th:class="'d-flex justify-content-start align-items-center'+(${active} == 'home' ? ' text-dark' : ' text-light')">
                     <img th:src="@{images/home.svg}" alt="book" width="35" height="35" class="me-1"/>
                     <span>Home</span>

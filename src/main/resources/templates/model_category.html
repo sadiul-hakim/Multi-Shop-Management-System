@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head th:replace="~{fragments/head :: head}">
+</head>
+<body>
+<div class="container-fluid">
+  <div class="row main-content">
+    <div th:replace="~{fragments/leftSide :: leftSide('model_category')}"></div>
+    <div th:replace="~{fragments/rightSide :: rightSide(~{::#content})}">
+      <div id="content">
+        <h1>Hi this is model_category Page</h1>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
